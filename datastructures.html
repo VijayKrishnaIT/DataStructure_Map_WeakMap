@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   let obj = {};
 
   let key1 = {};
@@ -14,7 +14,7 @@
   obj[key3] = value3;
 
   console.log(obj);
-</script>
+</script> -->
 
 <!--
 <script>
@@ -87,8 +87,66 @@
   }
 </script> -->
 
-<script>
+<!-- <script>
   let map = new WeakMap();
   map.set({}, "hello1");
   //   console.log(map);/WeakMap {{…} => "hello1"}[[Entries]]0: {Object => "hello1"}__proto__: WeakMap
+</script> -->
+
+<!-- <script>
+  let set = new Set();
+  console.dir(set);
+</script> -->
+
+<!-- <script>
+  let set = new Set();
+  //add won't allow duplicate value
+  set.add(10).add(20).add(30).add(10).add(30).add(20).add(40);
+  console.log([...set]); //(4) [10, 20, 30, 40]
+</script> -->
+
+<!-- <script>
+  let set = new Set([10, 20, 30, 10, 20, 30]);
+  console.log([...set]); // (3) [10, 20, 30]
+</script> -->
+<!-- 
+<script>
+  let set = new Set();
+  set
+    .add("Hello")
+    .add(10)
+    .add(true)
+    .add([10])
+    .add({ num: 1 })
+    .add(null)
+    .add(undefined)
+    .add(null);
+  console.log(set); //Set(7) {"Hello", 10, true, Array(1), {…}, …}[[Entries]]0: "Hello"1: 102: true3: Array(1)4: Object5: null6: undefinedsize: (...)__proto__: Set
+</script> -->
+<!-- 
+<script>
+  let set = new Set();
+  set.add(10).add("hello").add(20).add(true);
+  console.log(set.has(true)); //true
+  //get all the values.
+
+  console.log([...set.values()]); //(4) [10, "hello", 20, true]
+
+  console.log(set.delete(true)); //true
+  // only for data structures they introduced for...of
+
+  for (let value of set) {
+    console.log(value); //10 hello 20
+  }
+</script> -->
+
+<!-- <script>
+  let weakSet = new WeakSet();
+  weakSet.add("hello"); //datastructures.html:145 Uncaught TypeError: Invalid value used in weak set at WeakSet.add (<anonymous>)
+</script> -->
+
+<script>
+  let weakSet = new WeakSet();
+  weakSet.add({ num: 1 }).add([10]);
+  console.log(weakSet); // WeakSet
 </script>
